@@ -1,0 +1,284 @@
+﻿﻿
+<html>
+<form action="{% url 'questions:next' user_id %}" method="post" style="color: white">
+    <head>
+        <title>C-Storm </title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'comp/style.css' %}"/>
+        <style>
+
+            h1 {
+                color: #ffb499;
+                font-family: "andalemono";
+                margin-left: 35%;
+                font-size: 200%;
+            }
+
+            div.container {
+                width: 100%;
+                background-color: transparent;
+            }
+
+            header {
+                padding: 1em;
+                color: white;
+                background-color: #000033;
+                clear: left;
+                top: 0px;
+                text-align: center;
+            }
+
+            input[type="submit"] {
+                width = "50";
+                height = "0.5";
+                padding: 6px 17px;
+                font-size: 20px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                background-color: #333333;
+                border: none;
+                border-radius: 10px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #777777
+            }
+
+            button :active {
+                display: inline-block;
+                background-color: #333333;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+            #label1 {
+                font-size: 125%;
+                margin-left: 83%;
+                text-align: center;
+                background-color: #555555;
+
+            }
+
+            p {
+                text-align: left;
+                color: black;
+                font-size: 27px;
+            }
+
+            hr {
+                color: #D2B48C;
+            }
+
+            form {
+                text-align: left;
+                color: black;
+                font-size: 23px;
+                margin-left: 20px;
+            }
+
+            nav {
+                float: left;
+                max-width: 260px;
+                margin: 0;
+                padding: 1em;
+            }
+
+            article {
+                margin-left: 10px;
+                border-left: 1px solid gray;
+                padding: 1em;
+                overflow: hidden;
+                background-color: transparent;
+            }
+
+            div {
+                background-color: white;
+                width: 1800px;
+                border: 10px black;
+                padding: 25px;
+
+            }
+
+            label {
+                display: inline-block;
+                width: 200px;
+
+            }
+
+            input[type="text"] {
+                font-size: 20px;
+                text-align: center;
+                height: 50px;
+                width: 200px;
+            }
+        </style>
+    </head>
+
+
+    {% csrf_token %}
+    <body>
+    <div class="container" style="padding:2px;">
+        <nav>
+            <ul>
+
+
+                <!TIMMER code>
+
+                <p style="font-size=200%; color: #ffb499"><b>TIME</b></p>
+
+                <label type="label"
+                       style="background-color:black;color:white;font-family:courier;font-size:250%;margin-top:-15px;margin-bottom:50px"
+                       border="0"><b>
+                    <span id="time1"></span></b>
+
+                </label>
+
+                <!Score code>
+
+                <form style="color:white;margin-left:-5px" ;>
+                    <label style="margin-top:-25px;color:#ffb499;font-size:150%;" for="readonly;"> SCORE </label><br>
+                    <input name="readonly" type="text" value="{{ score }}" readonly>
+                </form>
+
+                <!LIFELINE code>
+                <p style="font-size:150%;color:#ffb499">LIFE LINES</p>
+
+
+                <input type="text" name="id" id="id" value="{{ question.pk }}" hidden>
+
+                {% if enabled_bonus %}
+                    <input type="submit"
+                           style=
+                                   "transition: .5s ease;
+	margin-top:-50px;"
+
+                           value="bonus" name="bonus"
+                    />
+                {% else %}
+                    <input type="submit"
+                           style=
+                                   "transition: .5s ease;
+	margin-top:-25px;"
+
+                           value="bonus" name="bonus"
+                           hidden disabled/>
+                {% endif %}
+                <br><br>
+                <p id="demo"></p>
+
+
+                {% if enabled_skip %}
+                    <input type="submit" style=
+                            "transition: .5s ease;
+	margin-top:-25px;"
+
+                           value="skip" name="skip"
+                    />
+                {% else %}
+                    <input type="submit" style=
+                            "transition: .5s ease;
+	margin-top:-25px;"
+
+
+                           value="skip" name="skip" hidden
+                    />
+                {% endif %}
+                <p id="demo3"></p>
+
+            </ul>
+
+
+            </ul>
+
+        </nav>
+
+        <article>
+
+
+            <h1>C-Storm </h1>
+            <label id="label1">{{ level }}</label>
+
+            <div style="background-color:#333333; margin-bottom:20px;">
+
+                <pre>{{ question.question }}</pre>
+            </div>
+
+            {% for option in question.get_options %}
+                <input type="radio" id="option{{ forloop.counter }}" name="option" value="{{ option }}"/>
+                <label for="option{{ forloop.counter }}" class="control-label col-md-3 col-sm-3 col-xs-12"
+                       style="background-color:#333333;width:95%;">
+                    {{ option }}
+                </label><br><br>
+            {% endfor %}
+
+            <input type="submit" style="position :relative;
+	transition: .5s ease;"
+
+                   value="next" name="next"/>
+
+
+            <input type="submit" style="position :relative;
+	transition: .5s ease;
+	left:75%;"
+                   value="Finish" name="finish_test"/>
+
+            <p id="demo1"></p>
+
+        </article>
+    </div>
+    </body>
+
+    <script type="text/javascript">
+
+        function startTimer(duration, display) {
+            var start = Date.now(),
+
+                diff,
+                minutes,
+                seconds;
+
+            function timer() {
+                // get the number of seconds that have elapsed since
+                // startTimer() was called
+                diff = duration - (((Date.now() - start) / 1000) | 0);
+
+                // does the same job as parseInt truncates the float
+                minutes = (diff / 60) | 0;
+                seconds = (diff % 60) | 0;
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+
+                if (diff <= 0) {
+                    // add one second so that the count down starts at the full duration
+                    // example 05:00 not 04:59
+                    // start = Date.now() + 1000;
+                    // window.location.replace("http:/comp/leaderboard/" );
+                    window.location.replace(" {%url 'questions:leaderboard' user_id %}");
+                }
+
+            };
+            // we don't want to wait a full second before the timer starts
+            timer();
+            setInterval(timer, 1000);
+        }
+
+        window.onload = function () {
+            var v = "{{remaining_time}}";
+
+            display = document.querySelector('#time1');
+            startTimer(v, display);
+        };
+    </script>
+
+
+</form>
+
+</html>
+

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+
+  <title>Registration</title>
+  
+ 
+
+  
+      <style>
+
+    input[type="submit"]{
+/* change these properties to whatever you want */
+ width:"50";
+ height="0.5";
+ padding: 6px 17px;
+    border:none;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+background-color: #6D6968;
+color: #fff;
+border-radius: 4px;
+}
+input[type="submit"]:hover {background-color: #D1D0DE;
+border-radius:7px;
+color: #2C3539;
+
+}
+      .wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-weight: bold;
+  padding-left: 25%;
+
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+
+.aside-1 {
+  height: 180%;
+
+  width:35%;
+  text-align: right;
+}
+
+.aside-2 {
+  width:35%;
+  height: 180%;
+  text-align: right;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 0 auto;
+  }
+}
+@media all and (min-width: 800px) {
+  .main {
+     
+  }
+
+  .aside-1 {
+    order: 1;
+    background: #555555;
+ 
+  }
+
+
+
+  .aside-2 {
+   background: #666666;
+    order: 2;
+  }
+}
+body {
+  padding: 2em;
+  background: #333333;
+   font-family: Arial, Helvetica, sans-serif;
+   color:#ffffff;
+}
+
+h2{
+  margin: auto
+}
+</style>
+
+ 
+
+</head>
+
+<body>
+<form action="{% url 'questions:check_login' %}" method="post">
+{% csrf_token %}
+<center><h2>Registration</h2></center>
+<br/>
+  <div class="wrapper">
+ 
+  
+  <aside class="aside aside-1">
+
+
+  <br/>
+  <br/>
+
+
+
+  <label for="team_name">Team Name &nbsp;</label>
+  <input type="text" name="team_name"required="required" id="team_name" autocomplete="off"><br/><br/>
+
+  <label for="participant1">Participant 1&nbsp;</label>
+  <input type="text" name="participant1" required="required"pattern="[A-Za-z\s]+[A-Za-z\s]+" title="Should contain only letters " id="participant1" autocomplete="off"><br/><br/>
+
+  <label for="mobile1">Mobile </label>
+  <input type="tel"name="mobile1" required="required"pattern="[0-9]{10}" title="Should contain 10 number only " id="mobile1" autocomplete="off"><br/><br/>
+
+  <label for="college1">College</label>
+  <input type="text" name="college1" required="required"pattern="[A-Za-z\s]+[A-Za-z\s]+" title="enter College name" id="college1" autocomplete="off"><br/><br/>
+
+  <label for="email1">Email</label>
+  <input type="email" name="email1" required="required"title="enter email id" id="email1" autocomplete="off"><br/><br/>
+
+
+
+
+   
+  </aside>
+
+
+
+
+  <aside class="aside aside-2">
+
+  <br/>
+  <br/>
+  <label for="reciept_number">Reciept No.</label>
+  <input type="number" name="reciept_number"required="required" id="reciept_number" autocomplete="off"><br/><br/>
+
+  <label for="participant2">Participant 2</label>
+  <input type="text" name="participant2"required="required"pattern="[A-Za-z\s]+[A-Za-z\s]+" title="Name contain only letters" id="participant2" autocomplete="off"><br/><br/>
+
+  <label for="mobile2">Mobile</label>
+  <input type="tel" name="mobile2"required="required" pattern="[0-9]{10}" title="Should contain 10 number only " id="mobile2" autocomplete="off"><br/><br/>
+
+  <label for="college2">College</label>
+  <input type="text" name="college2"required="required"pattern="[A-Za-z\s]+[A-Za-z\s]+" title="enter College name" id="college2" autocomplete="off"><br/><br/>
+
+  <label for="email2">Email</label>
+  <input type="email" name="email2"required="required"title="enter emailid" id="email2" autocomplete="off"><br/><br/>
+
+   
+
+
+
+  </aside>
+  
+</div>
+<br>
+<input style="margin-left:73.8%; margin-top:0px ; height:15%"  type="submit" value="Register">
+
+ </form> 
+
+  
+</body>
+</html>

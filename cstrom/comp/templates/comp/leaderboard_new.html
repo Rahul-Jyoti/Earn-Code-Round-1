@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Leaderboard | EarnCode</title>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static '/comp/css/font.css' %}" rel="stylesheet">
+    <script src="{% static '/comp/js/jquery.min.js' %}"></script>
+    <link rel="stylesheet"
+          href="{% static '/comp/css/jquery-ui.min.css' %}">
+    <script src="{% static '/comp/js/jquery-ui.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static '/comp/css/bootstrap.min.css' %}">
+
+
+    <script src="{% static '/comp/js/bootstrap.min.js' %}"></script>
+
+    <style>
+        .leader {
+            background: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div STYLE="text-align: center; font-weight: bolder" class="col-md-4 col-md-offset-4">
+            <H3>LEADER BOARD</H3>
+        </div>
+    </div>
+    <div class="row leader">
+        <div class="table-responsive">
+            <table class="table table-bordered white">
+                <thead class="thead-inverse">
+                <tr>
+
+                    <th>Rank</th>
+                    <th>Team Name</th>
+                    <th>College</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody id="table_body">
+                {% for user in all_user %}
+                    {% ifequal user_id user.pk %}
+                        <tr bgcolor="#BBBBBB" style="color:#000000">
+                            {% else %}
+                        <tr>
+                    {% endifequal %}
+                <td>{{ forloop.counter }}</td>
+                <td>{{ user.login_name }}</td>
+                <td>{{ user.college_name1 }}</td>
+                <td>{{ user.total_score }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<script>
+    history.pushState(null, null, document.title);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.title);
+        alert('It is all Over');
+    });
+</script>
+
+</body>
+</html>

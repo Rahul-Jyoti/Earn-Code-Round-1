@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<style>
+
+
+div {
+background-color:#333333;
+  margin-left: 20%;
+margin-top: 0px;
+margin-bottom: 150px;
+ width: 65%;
+border: 1px solid gray;
+outline-color: black;
+outline-style: groove;
+
+}
+
+body{background-image :url("black-abstract.jpg");
+}
+
+h1{text-align:center;
+	font-size:300%;
+}
+
+
+input{
+ text-align:right;
+
+}
+p{font-size:140%;
+
+}
+ol{
+font-size:140%;
+margin-left:100px;
+margin-right:100px;
+margin-top:10px;
+margin-bottom:20px;
+padding:0 0 0 0;
+color:white;
+font-family:sans-serif;
+font-weight:normal;
+}
+</style>
+</head>
+
+<body>
+<h1 style="color:white;"><b>INSTRUCTIONS</b></h1>
+
+<div>
+    <form action="{% url 'questions:generate' user_id %}" method="post">
+        {% csrf_token %}
+        {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'comp/instruction.css' %}" />
+<ol>
+<p ><li> First round consists of MCQ which has 30 minutes as the time limit.</li><br><li>This Round consists of three levels which are Easy, Medium & Hard.<br>Each easy level question is for 2 marks,Medium level question is for 4 marks,Hard level question is for 8 marks.
+</li><br><li>Each correct question will take you to higher level & Each wrong question will bring you to previous level.</li><br>
+<li>There is negative marking for all questions.
+<br>(+2,-1) for easy level question,(+4,-2) for medium level question, (+8,-4) for hard level question.
+  </li> <br> <li> There are 2 lifelines in this level.<br>You can skip atmost 1 question if you don't know the answer and after answering 3 correct questions ,The skip option will get enabled automatically.</li>
+<br><li>There is an option for BONUS which can be used only once.
+<br>Clicking on that option will let you score the marks in following ways.<br> Marking scheme for different types of question are:-
+<br>i. For easy level: (+4,-2)<br>ii. For Medium level: (+8,-4)<br>iii. For hard level: (+10,-8)</li>
+</p>
+<input  style="background-color:#666666;color:white; margin-left:95%" type="submit" id="submit"  value="Start Test">
+
+</ol></form>
+     </div>
+</body>
+</html>

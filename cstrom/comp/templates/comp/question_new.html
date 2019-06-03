@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questions | EarnCode</title>
+
+    <link href="{% static '/comp/css/font.css' %}" rel="stylesheet">
+    <script src="{% static '/comp/js/jquery.min.js' %}"></script>
+    <link rel="stylesheet"
+          href="{% static '/comp/css/jquery-ui.min.css' %}">
+    <script src="{% static '/comp/js/jquery-ui.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static '/comp/css/bootstrap.min.css' %}">
+
+
+    <script src="{% static '/comp/js/bootstrap.min.js' %}"></script>
+    <style>
+        html, body {
+            background: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        legend {
+            color: #0379C4;
+        }
+
+        .table-responsive {
+            max-height: 400px;
+        }
+    </style>
+</head>
+
+<body style="padding: 20px">
+
+<form action="{% url 'questions:next' user_id %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+        {#        <div class="row text-center">#}
+        {#            <h1>EarnCode</h1>#}
+        {#        </div>#}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <h4>TIMER</h4>
+                </div>
+                <div class="row">
+                    <h3 id="time" style="border: 1px solid black; padding: 2.5%; width: 22%;">timer</h3>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-md-offset-4 text-right">
+
+                <div class="row">
+                    <h4>SCORE</h4>
+                </div>
+                <div class="col-md-2 col-md-offset-2">
+                        <input class="btn btn-success" style="margin-top:20px; float: right" type="submit" value="Finish" name="finish_test"/>
+                    </div>
+                <div class="row">
+                    <h3><strong style="border: 1px solid black; padding: 2.5%">{{ score }}</strong></h3>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>{{ level }}</h3>
+            </div>
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4 text-right">
+                <div class="col-md-4">
+                    <h3 style="margin-top: 5px;">LIFELINES</h3>
+                </div>
+
+                <div class="col-md-4">
+                    {% if enabled_bonus %}
+                        <input class="btn btn-info" type="submit" value="Bonus" name="bonus"/>
+                    {% else %}
+                        <input type="submit" value="Bonus" name="bonus" disabled hidden/>
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    {% if enabled_skip %}
+                        <input class="btn btn-danger" type="submit" value="Skip" name="skip"/>
+                    {% else %}
+                        <input class="btn" type="submit" value="Skip" name="skip" disabled/>
+                    {% endif %}
+                </div>
+                <br/>
+
+
+                <input type="text" name="id" id="id" value="{{ question.pk }}" hidden>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <pre>{{ question.question }}</pre>
+                </div>
+                <div class="row">
+                    {% for option in question.get_options %}
+                        <input type="radio" id="option{{ forloop.counter }}" name="option" value="{{ option }}"/>
+                        <label for="option{{ forloop.counter }}" class="control-label">
+                            {{ option }}
+                        </label>
+                        <br>
+                        <br>
+
+                    {% endfor %}
+                </div>
+                <div class="row text-center ">
+                    <div class="col-md-2 col-md-offset-3">
+                        <input class="btn btn-primary" type="submit" value="Next" name="next">
+                    </div>
+                    <!--<div class="col-md-2 col-md-offset-2">-->
+                        <!--<input class="btn btn-success" type="submit" value="Finish" name="finish_test"/>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                Leaderboard: Your Rank: <label id="current_rank">{{ current_rank }}</label>
+                <div class="table-responsive">
+                    <table class="table table-bordered white">
+                        <thead class="thead-inverse">
+
+                        <tr>
+
+
+                            <th>Rank</th>
+                            <th>Team Name</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table_body">
+                        {% for user in all_user %}
+                            {% ifequal user_id user.pk %}
+                            <tr bgcolor="#BBBBBB" style="color:#000000">
+                                {% else %}
+                            <tr>
+                            {% endifequal %}
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ user.login_name }}</td>
+                                <td>{{ user.total_score }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+<script>
+    function startTimer(duration, display) {
+        var start = Date.now(),
+            diff,
+            minutes,
+            seconds;
+
+        function timer() {
+            // get the number of seconds that have elapsed since
+            // startTimer() was called
+            diff = duration - (((Date.now() - start) / 1000) | 0);
+            // does the same job as parseInt truncates the float
+            minutes = (diff / 60) | 0;
+            seconds = (diff % 60) | 0;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+            if (diff <= 0) {
+                // add one second so that the count down starts at the full duration
+                // example 05:00 not 04:59
+                // start = Date.now() + 1000;
+                // window.location.replace("http:/comp/leaderboard/" );
+                window.location.replace(" {%url 'questions:leaderboard' user_id %}");
+            }
+        };
+        // we don't want to wait a full second before the timer starts
+        timer();
+        setInterval(timer, 1000);
+    }
+
+    window.onload = function () {
+        let msg = "{{error_msg}}";
+        if(msg) alert(msg);
+        var v = "{{remaining_time}}";
+        display = document.querySelector('#time');
+        startTimer(v, display);
+    };
+</script>
+
+<script>
+    history.pushState(null, null, document.title);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.title);
+        alert("The only way is ahead");
+    });
+
+    $(document).ready(function update() {
+        $.ajax({
+            type: "POST",
+            url: "{% url 'questions:update_leaderboard' %}",
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            success: function (data) {
+                let parsed = JSON.parse(data);
+                {#alert();#}
+                {#let parsed = JSON.parse(data);#}
+                {#alert(parsed.read);#}
+                let table_body = document.getElementById('table_body');
+                while (table_body.firstChild) {
+                    table_body.removeChild(table_body.firstChild);
+                }
+                c = 1;
+                for (let i in parsed.read) {
+                    let row = document.createElement('tr');
+                    let column = document.createElement('td');
+                    column.innerHTML = c++;
+                    row.appendChild(column);
+                    column = document.createElement('td');
+                    column.innerHTML = parsed.read[i];
+                    row.appendChild(column);
+                    column = document.createElement('td');
+                    column.innerHTML = parsed.newest[i];
+                    row.appendChild(column);
+                    table_body.appendChild(row);
+                    {#alert({{ current_user.login_name }});#}
+                    if ("{{ current_team }}" === parsed.read[i]) {
+                        row.style.backgroundColor = "gray";
+                    }
+                }
+            },
+            complete: function () {
+                // Schedule the next request when the current one's complete
+                setTimeout(update, 5000);
+            }
+        });
+        return false; //<---- move it here
+    });
+</script>
+
+</html>

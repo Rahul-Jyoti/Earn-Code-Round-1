@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+h1{text-align :center; color:#DDDDDD;}
+table, th {
+    border: 2px solid black;
+    border-collapse: collapse;
+	background-color: #777777;
+}
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+
+}
+th, td {
+    padding: 5px;
+
+}
+th {
+    text-align: left;
+}
+</style>
+</head>
+<body bgcolor="#111111">
+<h1>LEADERBOARD</h1>
+<table style="width:100% ">
+
+
+  <tr  style="color:#FFFFFF">
+	<th style="width:4%">RANK</th>
+    <th>USERNAME</th>
+    <th>COLLEGE</th>
+    <th>SCORE</th>
+  </tr>
+    {% for user in all_user %}
+
+    {% ifequal user_id user.pk %}
+
+    <tr bgcolor="#BBBBBB" style="color:#000000">
+
+    {% else %}
+    <tr style="color:#FFFFFF" bgcolor="#444444">
+    {% endifequal %}
+        <td>{{forloop.counter}}</td>
+        <td>{{user.login_name}}</td>
+        <td>{{user.college_name1}}</td>
+        <td>{{user.total_score}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

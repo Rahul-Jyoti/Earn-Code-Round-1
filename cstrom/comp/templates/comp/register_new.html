@@ -1,0 +1,140 @@
+<html>
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team Register | EarnCode</title>
+
+    <link href="{% static '/comp/css/font.css' %}" rel="stylesheet">
+    <script src="{% static '/comp/js/jquery.min.js' %}"></script>
+    <link rel="stylesheet"
+          href="{% static '/comp/css/jquery-ui.min.css' %}">
+    <script src="{% static '/comp/js/jquery-ui.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static '/comp/css/bootstrap.min.css' %}">
+
+
+    <script src="{% static '/comp/js/bootstrap.min.js' %}"></script>
+    <style>
+        html, body {
+        {#background: #F9F9F9;#}
+            padding-bottom: 20px;
+        }
+
+        .login-form {
+        {#width: 30%;#} border: 1px solid #d8dee2;
+            border-radius: 5px;
+            display: inline-block;
+            background: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input {
+            border: 1px solid rgba(186, 186, 186, 0.35);
+            border-radius: 4px;
+            width: 94%;
+            padding: 5px;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .control-label {
+            margin-left: 10px;
+            float: left;
+            font-weight: 500;
+        }
+
+        .form-heading {
+            font-size: 2em;
+        }
+
+        .logoimage {
+            padding-top: 30px;
+        }
+
+    </style>
+</head>
+<body><br><br><br>
+
+
+<form method="post" action="{% url 'questions:check_login' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="logo col-md-8 col-md-offset-4">
+                <p class="form-heading">REGISTER YOUR TEAM</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="logoimage col-md-4">
+                <img src="../../static/comp/images/ea.png" width="100%">
+            </div>
+            <div class="login-form col-md-4">
+
+                <div class="form-element">
+                    <label class="control-label" style="display: block">Team Name</label>
+                    <input type="text" name="team_name" required="required" id="team_name"
+                           autocomplete="off"><br/><br/>
+                    <label class="control-label" style="display: block" for="participant1">Participant
+                        1&nbsp;</label>
+                    <input type="text" name="participant1" required="required" pattern="[A-Za-z\s]+[A-Za-z\s]+"
+                           title="Should contain only letters " id="participant1" autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="mobile1">Mobile </label>
+                    <input type="tel" name="mobile1" required="required" pattern="[0-9]{10}"
+                           title="Should contain 10 number only " id="mobile1" autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="college1">College</label>
+                    <input type="text" name="college1" required="required" pattern="[A-Za-z\s]+[A-Za-z\s]+"
+                           title="enter College name" id="college1" autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="email1">Email</label>
+                    <input type="email" name="email1" required="required" title="enter email id" id="email1"
+                           autocomplete="off"><br/><br/>
+                </div>
+
+            </div>
+            <div class="login-form col-md-4">
+
+                <div class="form-element">
+                    <label class="control-label" style="display: block" for="reciept_number">Reciept No.</label>
+                    <input type="number" name="reciept_number" required="required" id="reciept_number"
+                           autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="participant2">Participant 2</label>
+                    <input type="text" name="participant2" required="required" pattern="[A-Za-z\s]+[A-Za-z\s]+"
+                           title="Name contain only letters" id="participant2" autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="mobile2">Mobile</label>
+                    <input type="tel" name="mobile2" required="required" pattern="[0-9]{10}"
+                           title="Should contain 10 number only " id="mobile2" autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="college2">College</label>
+                    <input type="text" name="college2" required="required" pattern="[A-Za-z\s]+[A-Za-z\s]+"
+                           title="enter College name" id="college2" autocomplete="off"><br/><br/>
+
+                    <label class="control-label" style="display: block" for="email2">Email</label>
+                    <input type="email" name="email2" required="required" title="enter emailid" id="email2"
+                           autocomplete="off"><br/><br/>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-7">
+                <input class="btn" id="submit" type="submit" value="Register"/>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

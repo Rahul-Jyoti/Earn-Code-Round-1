@@ -1,0 +1,823 @@
+[
+  {
+    "id": 1,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nint main()\r\n{\r\nvoid add(int x,int y);\r\nint add(int p,int q);\r\nreturn 0;\r\n}",
+    "option1": "Run time error",
+    "option2": "Compile time error",
+    "option3": "Runs successfully",
+    "option4": "None",
+    "answer": "Compile time error",
+    "explanation": "Note: in function int main()\r\nError: ambiguating new declaration of 'int add(int, int)'"
+  },
+  {
+    "id": 2,
+    "question": "Which is not the false statement for new operator?",
+    "option1": "It cant be overloaded",
+    "option2": "It returns garbage value when memory allocation fails",
+    "option3": "It automatically computes the size of data object",
+    "option4": "All of the above",
+    "answer": "It automatically computes the size of data object",
+    "explanation": "new operator can be overloaded and it returns NULL when memory allocation fails"
+  },
+
+  {
+    "id": 4,
+    "question": "//What is output?\r\n#include<iostream>\r\n    using namespace std;\r\nstruct stud\r\n{\r\n int roll;\r\n};\r\nclass result:public stud\r\n{\r\n    public:\r\nvoid getdata()\r\n{\r\ncout<<\"Enter roll no\";\r\ncin>>roll;\r\n}\r\nvoid show()\r\n{\r\ncout<<\"Roll no. is\"<<roll;\r\n}\r\n\r\n};\r\nint main()\r\n{\r\nresult r;\r\nr.getdata();\r\nr.show();\r\nreturn 0;\r\n}\r\n//Consider the input roll no as 22",
+    "option1": "Enter roll no",
+    "option2": "Compile time error as structure cannot be inherited",
+    "option3": "Enter roll no 22 Roll no is 22",
+    "option4": "none",
+    "answer": "Enter roll no 22 Roll no is 22",
+    "explanation": "Structure can be inherited"
+  },
+  {
+    "id": 7,
+    "question": "Generic pointers can be declared with______",
+    "option1": "auto",
+    "option2": "asm",
+    "option3": "void",
+    "option4": "none",
+    "answer": "void",
+    "explanation": "void keyword is used to declare generic pointers"
+  },
+  {
+    "id": 10,
+    "question": "_____ allows that a section of a program is compiled only if the defined \r\nconstant that is specified as the parameter has been defined independently \r\nof its value",
+    "option1": "#define",
+    "option2": "#ifd",
+    "option3": "#ifdef",
+    "option4": "none",
+    "answer": "#ifdef",
+    "explanation": "#ifdef is the header file  which allows to specify constants as a parameter and define it independently of its value."
+  },
+  {
+    "id": 11,
+    "question": "question 1//What is output?\r\n#include<iostream>\r\nusing namespace std;\r\nvoid fun(int x,int y)\r\n {\r\n  x=20;\r\n  y=10;\r\n }\r\nint main()\r\n{\r\nint x=10;\r\nfun(x,x);\r\ncout<<x;\r\nreturn 0;\r\n}",
+    "option1": "10",
+    "option2": "20",
+    "option3": "compile time  error",
+    "option4": "none",
+    "answer": "10",
+    "explanation": "Value of x is passed by value.\r\nIt remains same after exiting the function scope"
+  },
+  {
+    "id": 13,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nclass book\r\n    {\r\n    static int x;\r\n    public:\r\n    book()\r\n     {\r\n         x++;\r\n     }\r\nstatic int getx()\r\n {\r\n      return x;\r\n }\r\n};\r\nint book::x=0;\r\nint main()\r\n{\r\ncout<<book::getx()<<\" \";\r\nbook b[5];\r\ncout<<book::getx();\r\nreturn 0;\r\n}",
+    "option1": "0 0",
+    "option2": "5 5",
+    "option3": "0 5",
+    "option4": "None",
+    "answer": "0 5",
+    "explanation": "x is firstly initialized to 0 automatically  so x=0\r\nthen 5 objects are created ,so x is incremented 5 times and x=5"
+  },
+  {
+    "id": 14,
+    "question": "A class is defined as follows:\r\n#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nclass abc\r\n{\r\nprivate: int a;\r\npublic: friend void getdata(void);\r\n\r\n};\r\nvoid getdata(void);\r\nint main()\r\n{\r\n    return 0;\r\n}\r\n\r\nThe correct header for defining getdata() function outside the class is ____",
+    "option1": "friend void abc::getdata(void);",
+    "option2": "void abc::getdata(void);",
+    "option3": "friend void getdata(void);",
+    "option4": "void getdata(void);",
+    "answer": "void getdata(void);",
+    "explanation": "Friend function is defined in syntax as:\r\nreturn_type name(data_type);"
+  },
+  {
+    "id": 17,
+    "question": "In multiple inheritance, in order to remove duplicate set of records in child class, we___",
+    "option1": "Write virtual function in parent classes",
+    "option2": "Write virtual function in base class",
+    "option3": "make base class as virtual base class",
+    "option4": "all",
+    "answer": "make base class as virtual base class",
+    "explanation": "Ambiguity is resolved by making base class as virtual base class in multiple inheritance"
+  },
+
+  {
+    "id": 139,
+    "question": "what is the meaning of the following statement:\r\nvolatile uint8_t * pReg; \r\nuint8_t volatile * pReg;",
+    "option1": "invalid statements",
+    "option2": "volatile pointer to the pReg",
+    "option3": "pReg is a pointer to a volatile unsigned 8-bit integer",
+    "option4": "syntax of the statements is wrong",
+    "answer": "pReg is a pointer to a volatile unsigned 8-bit integer",
+    "explanation": ".."
+  },
+
+  {
+    "id": 19,
+    "question": "Which is a valid statement?",
+    "option1": "void calc(int amt,int yr,float rate=7.8);",
+    "option2": "void calc(int amt=21,int yr,float rate=7.8);",
+    "option3": "void calc(int amt=20,int yr=5,float rate);",
+    "option4": "All of the above",
+    "answer": "void calc(int amt,int yr,float rate=7.8);",
+    "explanation": "Syntax for default parameters for 3 parameters:\r\nreturn_type name(type var1,type var2,type var3=value );"
+  },
+
+
+  {
+    "id": 26,
+    "question": "Which of the following is correct for an assignment statement",
+    "option1": "The lvalue must always be a variable",
+    "option2": "The rvalue mght be  constant,a variable, an expression or any combination of these",
+    "option3": "The assignment always takes place from right to left",
+    "option4": "All of the above",
+    "answer": "All of the above",
+    "explanation": "Assignment operator rules"
+  },
+  {
+    "id": 27,
+    "question": "Find output -\r\n#include<stdio.h>\r\nint main()\r\n{\r\nprintf(\"%d\",sizeof(7.2));\r\nreturn 0;\r\n}",
+    "option1": "4",
+    "option2": "8",
+    "option3": "16",
+    "option4": "2",
+    "answer": "8",
+    "explanation": "size alloted to floating point decimal number is 8 by compiler"
+  },
+  {
+    "id": 28,
+    "question": "int main() {\r\n\r\n\t\tunion Data {\r\n\r\n\t\tint i_;\r\n\r\n\t\tfloat f_;\r\n\r\n\t\tunsigned char str[20];\r\n\r\n\t\t} data;\r\n\r\n\t\tprintf(\"size = %d\\n\", sizeof(data));\r\n\r\n\t\tdata.i_ = 10;\r\n\r\n\t\tdata.f_ = 220.5;\r\n\r\n\t\tprintf( \"data.i_ : %d\\n\", data.i_);\r\n\r\n\t\treturn 0;\r\n\r\n\t}",
+    "option1": "28",
+    "option2": "32",
+    "option3": "20",
+    "option4": "24",
+    "answer": "20",
+    "explanation": "Maximum size is 20"
+  },
+
+
+  {
+    "id": 124,
+    "question": ".#include <stdio.h>\r\n    void main()\r\n    {\r\n        int k = 5;\r\n        int *p = &k;\r\n        int **m  = &p;\r\n        printf(\"%d%d%d\\n\", k, *p, **m);\r\n    }",
+    "option1": "5 5 5",
+    "option2": "5 5 junk value",
+    "option3": "5 junk junk",
+    "option4": "Compile time error",
+    "answer": "5 5 5",
+    "explanation": ".."
+  },
+
+  {
+    "id": 31,
+    "question": "What will be the output of the following program? \r\n\t#include <iostream>\r\n\r\n\tusing namespace std;\r\n\r\n\tclass Sample {\r\n\r\n\tpublic:\r\n\r\n\tint data_, graph_;\r\n\r\n\tSample(int x = 0): data_(x), graph_(0) {\r\n\r\n\tcout << data_ << \" \" << graph_ << \" \";\r\n\r\n\t}\r\n\r\n\tSample(int x, int y): data_(x), graph_(y) {\r\n\r\n\tcout << data_ << \" \" << graph_ << \" \";\r\n\r\n\t}\r\n\r\n\t};\r\n\r\n\tint main() {\r\n\r\n\tSample s1(4), s2(3,4), s3;\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "4 0 3 4",
+    "option2": "4 0 3 4 0 0",
+    "option3": "Compilation error",
+    "option4": "None of the above",
+    "answer": "4 0 3 4 0 0",
+    "explanation": "Explanation"
+  },
+  {
+    "id": 32,
+    "question": "What is the output?\r\n#include <iostream>\r\n\r\n\tusing namespace std;\r\n\r\n\tclass Complex {\r\n\r\n\tpublic: double *re, *im;\r\n\r\n\tComplex(double r, double m) {\r\n\r\n\tre = new double(r);\r\n\r\n\tim = new double(m);\r\n\r\n\t}\r\n\r\n\t~Complex(){\r\n\r\n\tdelete re, im; cout << \"destroy\";\r\n\r\n\t}\r\n\r\n\t};\r\n\r\n\tint main() {\r\n\r\n\tComplex n1(4,5);\r\n\r\n\tcout << *n1.re << \"+\" << *n1.im << \"i \";\r\n\r\n\tComplex n2 = n1;\r\n\r\n\tcout << *n2.re << \"+\" << *n2.im << \"i \";\r\n\r\n\t*n1.im = 6;\r\n\r\n\tcout << *n2.re << \"+\" << *n2.im << \"i \";\r\n\r\n\tcout << *n1.re << \"+\" << *n1.im << \"i \";\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "4+5i 4+6i 4+5i 4+6i",
+    "option2": "4+5i 4+5i 4+6i 4+6i",
+    "option3": "4+5i 4+6i 4+6i 4+6i",
+    "option4": "4+5i 4+5i 4+5i 4+6i",
+    "answer": "4+5i 4+5i 4+6i 4+6i",
+    "explanation": "Explanation"
+  },
+
+  {
+    "id": 34,
+    "question": "#include <iostream>\r\n\r\n\t#include <string>\r\n\r\n\tusing namespace std;\r\n\r\n\tclass Animal {\r\n\r\n\tint Age;\r\n\r\n\tfloat Weight;\r\n\r\n\tpublic:\r\n\r\n\tvoid move() { }\r\n\r\n\tvoid eat() { }\r\n\r\n\t};\r\n\r\n\tclass Bird: public Animal {\r\n\r\n\tpublic:\r\n\r\n\tvoid fly(int m, int f) { }\r\n\r\n\t};\r\n\tvoid food(const Animal& a) \r\n      {\r\n       a.move();\r\n       }\r\n\r\n\tvoid wings(const Bird& b) { b.fly(); }\r\n\r\n\tint main() {\r\n\r\n\tAnimal an;\r\n\r\n\tBird bi;\r\n\r\n\treturn 0;\r\n\r\n\t}\r\n\r\nWhich of the following is/are invalid function call/s?",
+    "option1": "food(an);",
+    "option2": "food(bi);",
+    "option3": "wings(bi);",
+    "option4": "wings(an);",
+    "answer": "wings(an);",
+    "explanation": "Ex"
+  },
+  {
+    "id": 35,
+    "question": "Identify the lines on which the compiler will report an error. \r\n\r\n\t\t#include <iostream> // ---1\r\n\r\n\t\tusing namespace std; // ---2\r\n\r\n\t\tclass Base { // ---3\r\n\r\n\t\tint var_; // ---4\r\n\r\n\t\tpublic: // ---5\r\n\r\n\t\tBase():var_(0){} // ---6\r\n\r\n\t\t}; // ---7\r\n\r\n\t\tclass Derived: public Base { public: // ---8\r\n\r\n\t\tint varD_; // ---9\r\n\r\n\t\tvoid print () { cout << var_; } // ---10\r\n\r\n\t\t}; // ---11\r\n\r\n\t\tint main() { // ---12\r\n\r\n\t\tDerived d; // ---13\r\n\r\n\t\td.var_ = 1; // ---14\r\n\r\n\t\td.varD_ = 1; // ---15\r\n\r\n\t\tcout << d.var_ <<\" \" << d.varD_; // ---16\r\n\r\n\t\treturn 0; // ---17\r\n\r\n\t\t} // ---18",
+    "option1": "6, 10, 14, 15",
+    "option2": "6, 15",
+    "option3": "6, 14, 16",
+    "option4": "10, 14, 16",
+    "answer": "10, 14, 16",
+    "explanation": "Ex"
+  },
+
+  {
+    "id": 37,
+    "question": "What will be the output of the program\r\n\t#include <iostream>\r\n\r\n\tusing namespace std;\r\n\r\n\tclass F1 {\r\n\r\n\tpublic:\r\n\r\n\tF1() { cout << \"F1 ctor \"; }\r\n\r\n\t~F1() { cout << \"F1 dtor \"; }\r\n\r\n\t};\r\n\r\n\tclass F2 : public F1 {\r\n\r\n\tpublic:\r\n\r\n\tF2() { cout << \"F2 ctor \"; }\r\n\r\n\t~F2() { cout << \"F2 dtor \"; }\r\n\r\n\t};\r\n\r\n\tclass F3 : public F1 {\r\n\r\n\tconst F2 &f2;\r\n\r\n\tpublic:\r\n\r\n\tF3() : f2(*new F2) { cout << \"F3 ctor \"; }\r\n\r\n\t~F3() { cout << \"F3 dtor \"; }\r\n\r\n\t};\r\n\r\n\tint main() {\r\n\r\n\tF3 f3;\r\n\r\n\treturn 0;\r\n\r\n\r\n\t}",
+    "option1": "F1 ctor F2 ctor F3 ctor F3 dtor F2 dtor F1 dtor",
+    "option2": "F1 ctor F1 ctor F2 ctor F3 ctor F3 dtor F1 dtor",
+    "option3": "F1 ctor F3 ctor F3 dtor F1 dtor",
+    "option4": "F1 ctor F1 ctor F2 ctor F3 ctor F3 dtor F2 dtor F1 dtor F1 dtor",
+    "answer": "F1 ctor F1 ctor F2 ctor F3 ctor F3 dtor F1 dtor",
+    "explanation": "ex"
+  },
+  {
+    "id": 38,
+    "question": "#include<iostream>\r\n\r\n\tusing namespace std;\r\n\r\n\tclass Shape {\r\n\r\n\tpublic:\r\n\r\n\tint x, y;\r\n\r\n\tShape(int a = 0, int b = 0): x(a), y(b) {}\r\n\r\n\tvoid draw()\r\n\r\n\t{ cout << x << \" \" << y << \" \"; }\r\n\r\n\t};\r\n\r\n\tclass Rectangle : public Shape {\r\n\r\n\tpublic:\r\n\r\n\tint w, h;\r\n\r\n\tRectangle(int a = 5, int b = 6): w(a), h(b), Shape(7, 8) {}\r\n\r\n\tvoid draw()\r\n\r\n\t{ Shape::draw(); cout << w << \" \" << h ; }\r\n\r\n\t};\r\n\r\n\tint main() {\r\n\r\n\tRectangle *r = new Rectangle(1,2);\r\n\r\n\tr-> draw();\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "0 0 1 2",
+    "option2": "7 8 1 2",
+    "option3": "7 8 5 6",
+    "option4": "0 0 5 6",
+    "answer": "7 8 1 2",
+    "explanation": "ex"
+  },
+
+  {
+    "id": 43,
+    "question": "if(5==6==7==0)\r\ncout<<\"Hi\";\r\nelse\r\ncout<<\"Bye\";\r\n\r\nWhat will be output\r\n(Consider everything included)",
+    "option1": "Hi",
+    "option2": "Bye",
+    "option3": "Hi  Bye",
+    "option4": "Error",
+    "answer": "CaughtOne CaughtOne CaughtString CaughtOne",
+    "explanation": "."
+  },
+  {
+    "id": 44,
+    "question": "#include <iostream>\r\n\r\n\tusing namespace std;\r\n\r\n\tclass X {\r\n\r\n\tpublic:\r\n\r\n\tclass Trouble {};\r\n\r\n\tclass Small : public Trouble {};\r\n\r\n\tclass Big : public Trouble {};\r\n\r\n\tvoid f() { throw Big(); }\r\n\r\n\t};\r\n\r\n\tint main() {\r\n\r\n\tX x;\r\n\r\n\ttry {\r\n\r\n\tx.f();\r\n\r\n\t}\r\n\r\n\tcatch (X::Trouble&) {\r\n\r\n\tcout << \"caught Trouble\" << endl;\r\n\r\n\t}\r\n\r\n\tcatch (X::Small&) {\r\n\r\n\tcout << \"caught Small Trouble\" << endl;\r\n\r\n\t}\r\n\r\n\tcatch (X::Big&) {\r\n\r\n\tcout << \"caught Big Trouble\" << endl;\r\n\r\n\t}\r\n\r\n\tcatch (...) {\r\n\r\n\tcout << \"default\" << endl;\r\n\r\n\t}\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "caught Big Trouble",
+    "option2": "caught Trouble",
+    "option3": "caught Small Trouble",
+    "option4": "default",
+    "answer": "caught Trouble",
+    "explanation": "."
+  },
+  {
+    "id": 45,
+    "question": "Which special symbol allowed in a variable name?",
+    "option1": "* (asterisk)",
+    "option2": "| (pipe)",
+    "option3": "– (hyphen)",
+    "option4": "_ (underscore)",
+    "answer": "_ (underscore)",
+    "explanation": "."
+  },
+  {
+    "id": 46,
+    "question": "How should the function compute() be defined?\r\n\r\n\tint main() {\r\n\r\n\tint a[3][4], b;\r\n\r\n\tb = compute(a,3);\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "int compute(int p[][n], int row)",
+    "option2": "int compute(int *p[][n], int row)",
+    "option3": "void compute(int *p[m][n], int row)",
+    "option4": "void compute(int p[m][n], int row)",
+    "answer": "int compute(int p[][n], int row)",
+    "explanation": "."
+  },
+  {
+    "id": 48,
+    "question": "What is the output of the above program?\r\n\r\n\tint main() {\r\n\r\n\tint i_ = 3, *j_, k_;\r\n\r\n\tj_ = &i_;\r\n\r\n\tprintf(\"%d\\n\", i_**j_*i_+*j_);\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "25",
+    "option2": "30",
+    "option3": "9",
+    "option4": "3",
+    "answer": "30",
+    "explanation": "."
+  },
+
+  {
+    "id": 50,
+    "question": "int main() {\r\n\r\n\tint i_ = 5, *j_, k_;\r\n\r\n\tj_ = &i_;\r\n\r\n\tprintf(\"%d\\n\", i_-*j_*i_-*j_);\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "-25",
+    "option2": "25",
+    "option3": "invalid operand of type",
+    "option4": "compilation error",
+    "answer": "-25",
+    "explanation": "."
+  },
+  {
+    "id": 51,
+    "question": "What is the output of the following program ? \r\n\r\n\r\n\r\n\tint main() {\r\n\r\n\tint sequence[] = {1, 2, 3, 4};\r\n\r\n\tint *pointer = (sequence + 2);\r\n\r\n\tcout << *sequence;\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "1",
+    "option2": "3",
+    "option3": "4",
+    "option4": "Compilation Error",
+    "answer": "1",
+    "explanation": "."
+  },
+  {
+    "id": 52,
+    "question": "Read this program and answer the questions below.\r\n\r\n\t#include <iostream>\r\n\r\n\t#include <cmath>\r\n\r\n\tint main() {\r\n\r\n\tfloat a, b;\r\n\r\n\tcout << \"Input two numbers:\\n\";\r\n\r\n\tcin >> a >> b;\r\n\r\n\tfloat sq = sqrt(a*a + b*b);\r\n\r\n\treturn 0;\r\n\r\n\t}\r\n\r\n\t What is the compilation error for this program?",
+    "option1": "Each undeclared identifier is reported only once",
+    "option2": "cout and cin not declared in scope",
+    "option3": "invalid conversion from int to float",
+    "option4": "None of the above",
+    "answer": "cout and cin not declared in scope",
+    "explanation": "using namespace std"
+  },
+  {
+    "id": 53,
+    "question": "What will be the output of the following program? Marks 1\r\n\r\n\t#include <iostream>\r\n\r\n\tusing namespace std;\r\n\r\n\tint main() {\r\n\r\n\tint e1 = 5, e2 = 20, e3 = 15;\r\n\r\n\tint *arr[3] = {&e1, &e2, &e3};\r\n\r\n\tcout << *arr[*arr[1] - 19];\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "5",
+    "option2": "20",
+    "option3": "15",
+    "option4": "Unpredictable value",
+    "answer": "20",
+    "explanation": "."
+  },
+  {
+    "id": 54,
+    "question": "What will be the output of the following program? Marks 1\r\n\r\n\t#include <iostream>\r\n\r\n\t#include <algorithm>\r\n\r\n\tusing namespace std;\r\n\r\n\tbool compare (int i, int j) {\r\n\r\n\treturn (i > j);\r\n\r\n\t}\r\n\r\n\tint main() {\r\n\r\n\tint data[] = {32, 71, 12, 45, 26};\r\n\r\n\tsort (data, data+4, compare);\r\n\r\n\tfor (int i = 0; i < 5; i++)\r\n\r\n\tcout << data[i] << \" \";\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "71 45 32 26 12",
+    "option2": "71 45 32 12 26",
+    "option3": "12 26 32 45 71",
+    "option4": "None of the above",
+    "answer": "71 45 32 12 26",
+    "explanation": ".."
+  },
+  {
+    "id": 55,
+    "question": "#include <iostream>\r\n\r\n\t#include <algorithm>\r\n\r\n\tusing namespace std;\r\n\r\n\tbool compare (int i, int j) {\r\n\r\n\treturn (i > j);\r\n\r\n\t}\r\n\r\n\tint main() {\r\n\r\n\tint data[] = {32, 71, 12, 45, 26};\r\n\r\n\tsort (data, data+0, compare);\r\n\r\n\tfor (int i = 0; i < 5; i++)\r\n\r\n\tcout << data[i] << \" \";\r\n\r\n\treturn 0;\r\n\r\n\t}",
+    "option1": "71 45 32 26 12",
+    "option2": "32 71 12 45 26",
+    "option3": "32 71 12 26 45",
+    "option4": "None of the above",
+    "answer": "32 71 12 26 45",
+    "explanation": "."
+  },
+
+  {
+    "id": 57,
+    "question": "#include <stdio.h>  \r\n#include <math.h>\r\n\r\nint main ()\r\n{\r\n  printf ( \"%f\\n\", fmod (5.3,2)%2);\r\n  return 0;\r\n}",
+    "option1": "1.3000000",
+    "option2": "1.300000000",
+    "option3": "Error",
+    "option4": "0",
+    "answer": "Error",
+    "explanation": "a"
+  },
+
+  {
+    "id": 59,
+    "question": "#include <iostream>\r\n\r\n        using namespace std;\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n        \tint x = -1;\r\n\r\n            unsigned int y = 2;\r\n\r\n     \r\n\r\n            if(x > y) {\r\n\r\n            \tcout << \"x is greater\";\r\n\r\n        \t} else {\r\n\r\n        \t\tcout << \"y is greater\";\r\n\r\n        \t}\r\n\r\n        }",
+    "option1": "x is greater",
+    "option2": "y is greater",
+    "option3": "Implementation defined",
+    "option4": "Arbitrary",
+    "answer": "x is greater.",
+    "explanation": "Explanation: x is promoted to unsigned int on comparison. On conversion x has all bits set, making it the bigger one."
+  },
+
+  {
+    "id": 61,
+    "question": "#include <iostream>\r\n\r\n        using namespace std;\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            int i = 3;\r\n\r\n            int l = i / -2;\r\n\r\n            int k = i % -2;\r\n\r\n            cout << l << k;\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "compile time error",
+    "option2": "-1 1",
+    "option3": "1 -1",
+    "option4": "implementation defined",
+    "answer": "-1 1",
+    "explanation": "Explanation: Sign of result of mod operation on negative numbers is sign of the dividend."
+  },
+  {
+    "id": 62,
+    "question": "What is the output of this program?\r\n\r\n        #include <iostream>\r\n\r\n        using namespace std;\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            void a = 10, b = 10;\r\n\r\n            int c;\r\n\r\n            c = a + b;\r\n\r\n            cout << c;\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "20",
+    "option2": "compile time error",
+    "option3": "runtime error",
+    "option4": "none of the mentioned",
+    "answer": "compile time error",
+    "explanation": "Explanation:void will not accept any values to its type."
+  },
+  {
+    "id": 63,
+    "question": "What is the output of this program?\r\n\r\n        #include <stdio.h>\r\n\r\n        using namespace std;\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            int a = 5, b = 10, c = 15;\r\n\r\n            int arr[3] = {&a, &b, &c};\r\n\r\n            cout << *arr[*arr[1] - 8];\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "15",
+    "option2": "18",
+    "option3": "garbage value",
+    "option4": "compile time error",
+    "answer": "compile time error",
+    "explanation": "Explantion:The conversion is invalid in this array. So it will arise error. The following compilation error will be raised:\r\ncannot convert from â€˜int *â€™ to â€˜intâ€™"
+  },
+  {
+    "id": 64,
+    "question": "What is the output of this program?\r\n\r\n        #include <stdio.h>\r\n\r\n        using namespace std;\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            int array[] = {10, 20, 30};\r\n\r\n            cout << -2[array];\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "-15",
+    "option2": "-30",
+    "option3": "30",
+    "option4": "garbage value",
+    "answer": "-30",
+    "explanation": "Explanation:Itâ€™s just printing the negative value of the concern element.\r\n$ g++ array.cpp\r\n$ a.out\r\n-30"
+  },
+  {
+    "id": 65,
+    "question": "In which type of storage location are the vector members stored?",
+    "option1": "Contiguous storage locations",
+    "option2": "Non-contiguous storage locations",
+    "option3": "Both a & b",
+    "option4": "None of the mentioned",
+    "answer": "Contiguous storage locations",
+    "explanation": "Explanation:Vectors use contiguous storage locations for their elements, which means that their elements can also be accessed using offsets on regular pointers to its elements"
+  },
+ {
+    "id": 70,
+    "question": "#include <stdio.h>\r\n\r\n        void main()\r\n\r\n        {\r\n\r\n            int k = 4;\r\n\r\n            int *const p = &k;\r\n\r\n            int r = 3;\r\n\r\n            p = &r;\r\n\r\n            printf(\"%d\", p);\r\n\r\n        }",
+    "option1": "Address of k",
+    "option2": "Address of r",
+    "option3": "Compile time error",
+    "option4": "Adress of k + address of r",
+    "answer": "Compile time error",
+    "explanation": "Explanation:Since the pointer p is declared to be constant, trying to assign it with a new value results in an error."
+  },
+  {
+    "id": 71,
+    "question": "What is the output of this C code?\r\n\r\n        #include <stdio.h>\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            const int p;\r\n\r\n            p = 4;\r\n\r\n            printf(\"p is %d\", p);\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "p is 4",
+    "option2": "Compile time error",
+    "option3": "Run time error",
+    "option4": "p is followed by a garbage value",
+    "answer": "Compile time error",
+    "explanation": "Explanation:Since the constant variable has to be declared and defined at the same time, not doing it results in an error.\r\n\r\npgm10.c: In function â€˜mainâ€™:\r\npgm10.c:5: error: assignment of read-only variable â€˜pâ€™"
+  },
+
+  {
+    "id": 74,
+    "question": "#include <stdio.h>\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            int p = 10, q = 20, r;\r\n\r\n            if (r = p = 5 || q > 20)\r\n\r\n                printf(\"%d\", r);\r\n\r\n            else\r\n\r\n                printf(\"No Output\\n\");\r\n\r\n        }",
+    "option1": "1",
+    "option2": "10",
+    "option3": "20",
+    "option4": "0",
+    "answer": "1",
+    "explanation": "."
+  },
+  {
+    "id": 75,
+    "question": "What is the output of this program?\r\n\r\n        #include <iostream>\r\n\r\n        using namespace std;\r\n\r\n        struct sec {\r\n\r\n            int a;\r\n\r\n            char b;\r\n\r\n        };\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            struct sec s ={25,50};\r\n\r\n            struct sec *ps =(struct sec *)&s;\r\n\r\n            cout << ps->a << ps->b;\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "252",
+    "option2": "253",
+    "option3": "254",
+    "option4": "262",
+    "answer": "252",
+    "explanation": "Explanation:In this program, We are dividing the values of a and b, printing it."
+  },
+  {
+    "id": 76,
+    "question": "What will be the output of this program?\r\n\r\n        #include <iostream>\r\n\r\n        using namespace std;\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            struct ShoeType {\r\n\r\n               string style;\r\n\r\n               double price;\r\n\r\n            };\r\n\r\n             ShoeType shoe1, shoe2;\r\n\r\n             shoe1.style = \"Adidas\";\r\n\r\n             shoe1.price = 9.99;\r\n\r\n             cout << shoe1.style << \" $ \"<< shoe1.price;\r\n\r\n             shoe2 = shoe1;\r\n\r\n             shoe2.price = shoe2.price / 9;\r\n\r\n             cout << shoe2.style << \" $ \"<< shoe2.price;\r\n\r\n             return 0;\r\n\r\n        }",
+    "option1": "Adidas $ 9.99     Adidas $ 1.11",
+    "option2": "Adidas $ 9.99     Adidas $ 9.11",
+    "option3": "Adidas $ 9.99     Adidas $ 11.11",
+    "option4": "none of the mentioned",
+    "answer": "Adidas $ 9.99     Adidas $ 1.11",
+    "explanation": "Explanation:We copied the value of shoe1 into shoe2 and divide the shoe2 value by 9, So this is the output.\r\nAdidas $ 9.99\r\nAdidas $ 1.11"
+  },
+  {
+    "id": 77,
+    "question": "What is the output of this program?\r\n\r\n        #include <iostream>\r\n\r\n        using namespace std;\r\n\r\n        class base\r\n\r\n        {\r\n\r\n            int val1, val2;\r\n\r\n            public:\r\n\r\n            int get()\r\n\r\n    \t{\r\n\r\n                val1 = 100;\r\n\r\n                val2 = 300;\r\n\r\n    \t}\r\n\r\n            friend float mean(base ob);\r\n\r\n        };\r\n\r\n        float mean(base ob)\r\n\r\n        {\r\n\r\n            return float(ob.val1 + ob.val2) / 2;\r\n\r\n        }\r\n        int main()\r\n\r\n        {\r\n\r\n            base obj;\r\n\r\n            obj.get();\r\n\r\n            cout << mean(obj);\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "200",
+    "option2": "150",
+    "option3": "100",
+    "option4": "300",
+    "answer": "200",
+    "explanation": "Explanation:In this program, We are finding the mean value by declaring the function mean as a friend of class base."
+  },
+  {
+    "id": 78,
+    "question": "Which operator is having the highest precedence in c++?",
+    "option1": "array subscript",
+    "option2": "Scope resolution operator",
+    "option3": "static_cast",
+    "option4": "dynamic_cast",
+    "answer": "Scope resolution operator",
+    "explanation": "."
+  },
+
+  {
+    "id": 80,
+    "question": "which type does the enumerators are stored by the compiler?",
+    "option1": "string",
+    "option2": "integer",
+    "option3": "float",
+    "option4": "none of the mentioned",
+    "answer": "integer",
+    "explanation": "."
+  },
+
+  {
+    "id": 84,
+    "question": "What is the output of this program?\r\n\r\n        #include \r\n\r\n        using namespace std;\r\n\r\n        class Distance\r\n\r\n        {\r\n\r\n            private:\r\n\r\n            int feet;\r\n\r\n            int inches;\r\n\r\n            public:\r\n\r\n            Distance()\r\n\r\n            {\r\n\r\n                feet = 0;\r\n\r\n                inches = 0;\r\n\r\n            }\r\n\r\n            Distance(int f, int i) \r\n\r\n            {\r\n\r\n                feet = f;\r\n\r\n                inches = i;\r\n\r\n            }\r\n\r\n            Distance operator()(int a, int b, int c)\r\n\r\n            {\r\n\r\n                Distance D;\r\n\r\n                D.feet = a + c + 10;\r\n\r\n                D.inches = b + c + 100 ;\r\n\r\n                return D\r\n\r\n            }\r\n\r\n            void displayDistance()\r\n\r\n            {\r\n\r\n                cout  << feet <<  inches << endl;\r\n\r\n            }\r\n\r\n        };\r\n\r\n        int main()\r\n\r\n        {\r\n\r\n            Distance D1(11, 10), D2;\r\n\r\n            cout << \"First Distance : \";\r\n\r\n            D1.displayDistance();\r\n\r\n            D2 = D1(10, 10, 10);\r\n\r\n            cout << \"Second Distance :\";\r\n\r\n            D2.displayDistance();\r\n\r\n            return 0;\r\n\r\n        }",
+    "option1": "First Distance : 1110 Second Distance :30120",
+    "option2": "First Distance : 110 Second Distance :3020",
+    "option3": "First Distance : 1115 Second Distance :30125",
+    "option4": "none of the mentioned",
+    "answer": "First Distance : 1110 Second Distance :30120",
+    "explanation": "Explanation:We are calculating the foot and inches by using the function call operator.\r\nFirst Distance : 1110\r\nSecond Distance :30120"
+  },
+
+
+  {
+    "id": 90,
+    "question": "#include <stdio.h> \r\n \r\nint *f(); \r\n \r\nint main() \r\n{ \r\nint *p = f(); \r\n \r\nprintf(\"%c\\n\", *p); \r\n} \r\nint *f() \r\n{  \r\nint j = 52; \r\nreturn &j; \r\n}",
+    "option1": "3",
+    "option2": "Garbage Value",
+    "option3": "Compile time error",
+    "option4": "Segmentation fault/runtime crash",
+    "answer": "3",
+    "explanation": "."
+  },
+  {
+    "id": 91,
+    "question": "void foo(char str1[],char str2[])\r\n{\r\n    for(int i=0;i<strlen(str1);i++)\r\n    {\r\n        str1[i]=(str1[i]^str2[i]);\r\n    }\r\n    str1[strlen(str1)] = '\\0';\r\n}\r\nint main()\r\n{\r\n    char str1[] = \"1234\";\r\n    char str2[] = \"4331\";\r\n    foo(str1,str2);\r\n    cout<<strlen(str1);\r\n    return 0;\r\n}\r\nOutput?",
+    "option1": "1",
+    "option2": "2",
+    "option3": "3",
+    "option4": "4",
+    "answer": "2",
+    "explanation": "."
+  },
+
+  {
+    "id": 93,
+    "question": "int main()\r\n{\r\n        char *k; \r\n        int j=577;\r\n        k=&j;    \r\n        printf(\"%d\",*k);\r\n}\r\nOutput?",
+    "option1": "65",
+    "option2": "512",
+    "option3": "577",
+    "option4": "Compilation Error",
+    "answer": "65",
+    "explanation": "as"
+  },
+  {
+    "id": 94,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nstruct temp\r\n{\r\n   int operator++()\r\n    {\r\n        return 0;\r\n    }\r\n};\r\n\r\nint main()\r\n{\r\n    temp t1;\r\n    int a=t1++;\r\n    cout<<a;\r\n    return(0);\r\n}",
+    "option1": "0",
+    "option2": "1",
+    "option3": "2",
+    "option4": "Compilation Error",
+    "answer": "0",
+    "explanation": "."
+  },
+  {
+    "id": 95,
+    "question": ". Find output\r\n#include<stdio.h>\r\nint main()\r\n{\r\nint a=0,b=1,c=2;\r\n*((a+1==1)?&b:&a)=a?b:c;\r\nprintf(\"%d%d%d\",a,b,c);\r\nreturn 0;\r\n}",
+    "option1": "1,1,2",
+    "option2": "2,2,2",
+    "option3": "0,2,2",
+    "option4": "0,1,2",
+    "answer": "0,2,2",
+    "explanation": ".."
+  },
+  {
+    "id": 96,
+    "question": "Find output\r\n#include<stdio.h>\r\nint main()\r\n{\r\nint a=100,b=200,c=300;\r\nif(!a>=500)\r\nb=300;\r\nc=400;\r\nprintf(\"%d%d%d\",a,b,c);\r\nreturn 0;\r\n}",
+    "option1": "100,200,300",
+    "option2": "100,200,400",
+    "option3": "100,200,300",
+    "option4": "100,300,400",
+    "answer": "100,200,400",
+    "explanation": "."
+  },
+  {
+    "id": 97,
+    "question": "Find output\r\n#define x 5+2\r\nvoid main()\r\n{\r\nint i;\r\ni=x*x*x;\r\nprintf(\"%d\",i);\r\n}",
+    "option1": "343",
+    "option2": "27",
+    "option3": "125",
+    "option4": "compiler error",
+    "answer": "27",
+    "explanation": "."
+  },
+  {
+    "id": 98,
+    "question": "What will be output\r\n\r\nvoid main()\r\n{\r\nchar c=125;\r\nc=c+10;\r\nprintf(\"%d\",c);\r\n}",
+    "option1": "135",
+    "option2": "-8",
+    "option3": "-121",
+    "option4": "compiler error",
+    "answer": "-121",
+    "explanation": "."
+  },
+
+  {
+    "id": 100,
+    "question": "output?\r\nvoid main()\r\n{\r\nchar *str=\"hello Welcome\";\r\nprintf(\"%d\",printf(\"%s\",str));\r\n}",
+    "option1": "13Hello Welcome",
+    "option2": "12Hello Welcome",
+    "option3": "Hello Welcome13",
+    "option4": "Hello Welcome12",
+    "answer": "Hello Welcome13",
+    "explanation": "."
+  },
+
+  {
+    "id": 102,
+    "question": "output ?\r\n#define call(x,y) x##y\r\nvoid main()\r\n{\r\nint x=5,y=10,xy=20;\r\nprintf(\"%d\",xy+call(x,y));\r\n}",
+    "option1": "35",
+    "option2": "510",
+    "option3": "15",
+    "option4": "40",
+    "answer": "40",
+    "explanation": "."
+  },
+
+  {
+    "id": 106,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nclass test\r\n{\r\n\tint a,b;\r\n\tpublic:\r\n\t\ttest()\r\n\t\t{\r\n\t\t\ta=b=5;\r\n\t\t}\r\n\t\tvoid show()\r\n\t\t{\r\n\t\t\tcout<<a<<endl<<b<<endl;\r\n\t\t}\r\n};\r\nclass test1 : protected test\r\n{\r\n\tint z;\r\n\tpublic:\r\n\t\tstatic void print()\r\n\t\t{\r\n\t\t\tcout<<\"i am in print function\\n\";\r\n\t\t\tthis->show();\r\n\t\t}\r\n\t\t\r\n};\r\nint main()\r\n{\r\n\ttest1 t;\r\n\tcout<<\"calling print function\\n\";\r\n\tt.print();\r\n\treturn 0;\r\n}",
+    "option1": "calling print function",
+    "option2": "calling print function   i am in print function   5   5",
+    "option3": "calling print function   i am in print function",
+    "option4": "Compilation Error",
+    "answer": "Compilation Error",
+    "explanation": "static this"
+  },
+
+  {
+    "id": 109,
+    "question": "#include<iostream>\r\nusing namespace std;\r\n\r\nclass test\r\n{\r\n\tint a,b;\r\n\tpublic:\r\n\t\ttest()\r\n\t\t{\r\n\t\t\ta=b=5;\r\n\t\t}\r\n\t\t\r\n\t\tvoid operator+()\r\n\t\t{\r\n\t\t\ta=-a;\r\n\t\t\tb=-b;\r\n\t\t}\r\n\t\t\r\n\t\ttest operator+(test t1)\r\n\t\t{\r\n\t\t\ttest t2;\r\n\t\t\tt2.a=a+t1.a;\r\n\t\t\tt2.b=b+t1.b;\r\n\t\t\t//return t1;\r\n\t\t}\r\n\t\tvoid display()\r\n\t\t{\r\n\t\t\tcout<<a<<endl<<b<<endl;\r\n\t\t}\r\n};\r\n\r\nint main()\r\n{\r\n\ttest t1,t2,t3;\r\n\t+t1;\r\n\tt3=t1+t2;\r\n\tt3.display();\r\n\treturn 0;\r\n}",
+    "option1": "0   0",
+    "option2": "5   5",
+    "option3": "error: unary plus cannot be used to negate objects",
+    "option4": "5   -5",
+    "answer": "5   5",
+    "explanation": "."
+  },
+  {
+    "id": 110,
+    "question": "#include <iostream>\r\nusing namespace std;\r\n \r\nint main()\r\n{\r\n   int test = 0;\r\n   \r\n   cout << (test ? 32 : ' ') << endl;\r\n \r\n   return 0;\r\n}",
+    "option1": "output will be 32",
+    "option2": "output will be blank space",
+    "option3": "error",
+    "option4": "none of the above",
+    "answer": "output will be 32",
+    "explanation": "."
+  },
+  {
+    "id": 111,
+    "question": "#include <stdio.h>\r\nint main()\r\n{\r\n     int x = 10;\r\n     while( x --> 0 ) \r\n     {\r\n       printf(\"%d \", x);\r\n\r\n\r\n     }\r\n}",
+    "option1": "compiler error",
+    "option2": "9-0",
+    "option3": "12",
+    "option4": "00",
+    "answer": "9-0",
+    "explanation": "."
+  },
+  {
+    "id": 112,
+    "question": "#include <iostream>\r\nusing namespace std;\r\n\r\nusing std::cout;\r\n \r\nclass Test {\r\npublic:\r\n  int x;\r\n  mutable int y;\r\n  void xyz() const\r\n  {\r\n\tthis->y  =100;\r\n\t}\r\n  Test() { x = 4; y = 10; }\r\n};\r\nint main()\r\n{\r\n    const Test t1;\r\n\tcout<<y;\r\n\tt1.y=60;\r\n\tcout<<y;\r\n\tt1.xyz();\r\n\tcout<<y;\r\n    t1.y = 20;\r\n    cout << t1.y;\r\n    return 0;\r\n}",
+    "option1": "10,60,100,20",
+    "option2": "60,20",
+    "option3": "100,10",
+    "option4": "error",
+    "answer": "10,60,100,20",
+    "explanation": "."
+  },
+  {
+    "id": 113,
+    "question": "#include<iostream>\r\nusing namespace std;\r\n\r\nclass aaa\r\n{\t\r\n\taaa()\r\n\t{\r\n\t\tcout<<\"hi\";\r\n\t}\r\n\tpublic:\r\n\taaa(int n)\r\n\t{\taaa();\r\n\t\tcout<<n<<endl;\r\n\t}\r\n};\r\n\r\nint main()\r\n{\r\n\taaa d(8);\r\n\treturn 0;\r\n\t\r\n}",
+    "option1": "8",
+    "option2": "hi8",
+    "option3": "hi",
+    "option4": "compilation error",
+    "answer": "hi8",
+    "explanation": ".ass"
+  },
+
+  {
+    "id": 118,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nclass base1\r\n{public:\r\n\tvoid disp()\r\n\t{\r\n\t\tcout<<\"base1\"<<endl;\r\n\t}\r\n};\r\nclass base2\r\n{\tpublic:\r\n\tvoid disp()\r\n\t{\r\n\t\tcout<<\"base2\\n\";\r\n\t}\r\n};\r\nclass derived:public base1,public base2\r\n{\t\r\n\t\r\n};\r\nint main()\r\n{\r\n\tderived d;\r\n\td.disp();\r\n\treturn 0;\r\n}",
+    "option1": "base1",
+    "option2": "base2",
+    "option3": "base1   base2",
+    "option4": "compile time error",
+    "answer": "compile time error",
+    "explanation": "ambiguous funtion call not specified"
+  },
+  {
+    "id": 119,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nclass derived;\r\nclass base1\r\n{protected:\r\n\tbase1(){\r\n\t\tcout<<\"base1\\n\";\r\n\t}\r\n};\r\nclass base2\r\n{\tpublic:\r\n\tbase2()\r\n\t{\t\r\n\t\tcout<<\"base2\\n\";\r\n\t\t\r\n\t}\r\n};\r\nclass derived:public base1,public base2\r\n{\r\n\tpublic:\r\n\t\tderived()\r\n\t\t{\r\n\t\t\tcout<<\"derived\\n\";\r\n\t\t\tbase2();\r\n\t\t}\r\n};\r\nint main()\r\n{\r\n\tderived d;\r\n\t\r\n\treturn 0;\r\n}\r\noutput is:",
+    "option1": "base1   base2   base2   derived",
+    "option2": "base1   base2   derived   base2",
+    "option3": "derived   base2   base1   base3",
+    "option4": "compile error",
+    "answer": "base1   base2   derived   base2",
+    "explanation": "constructor calling sequence"
+  },
+  {
+    "id": 120,
+    "question": "#include<iostream>\r\nusing namespace std;\r\nclass index\r\n{\r\n\tint *a;\r\n\tpublic:\r\n\t\tindex()\r\n\t\t{\tcout<<\"constructor called\\n\";\r\n\t\t\ta= new int;\r\n\t\t}\r\n\t\t~index()\r\n\t\t{\tcout<<\"destructor called\\n\";\r\n\t\t\tdelete(a);\r\n\t\t}\r\n};\r\nint main()\r\n{\r\n\tindex i;\r\n\ti.~index();\r\n\t\r\n}\r\noutput is :",
+    "option1": "constructor called  destructor called",
+    "option2": "constructor called   destructor called   destructor called",
+    "option3": "compile time error",
+    "option4": "undefined behavior",
+    "answer": "undefined behavior",
+    "explanation": "cant free a location twice"
+  },
+  {
+    "id": 121,
+    "question": "\"I scored 93%!\"\r\nSelect the statement which will EXACTLY reproduce the line of text above.\r\noption:",
+    "option1": "printf(\"\\\"I scored 93/%\\!\\\"\\n\");",
+    "option2": "printf(\"I scored 93%!\\n\");",
+    "option3": "printf(\"I scored 93'%'!\\n\");",
+    "option4": "printf(\"\\\"I scored 93%%!\\\"\\n\");",
+    "answer": "printf(\"\\\"I scored 93%%!\\\"\\n\");",
+    "explanation": ".."
+  },
+  {
+    "id": 122,
+    "question": "What is meaning of following declaration?\r\n    int(*ptr[5])();",
+    "option1": "ptr is pointer to function.",
+    "option2": "ptr is array of pointer to function.",
+    "option3": "ptr is pointer to such function which return type is array.",
+    "option4": "ptr is pointer to array of function.",
+    "answer": "ptr is array of pointer to function.",
+    "explanation": "n:In this expression, ptr is array not pointer"
+  },
+
+  {
+    "id": 125,
+    "question": "#include <stdio.h>\r\n    double var = 8;\r\n    int main()\r\n    {\r\n        int var = 5;\r\n        printf(\"%d\", var);\r\nreturn 0;\r\n    }",
+    "option1": "5",
+    "option2": "8",
+    "option3": "Compile time error due to wrong format identifier for double",
+    "option4": "Compile time error due to redeclaration of variable with same name",
+    "answer": "8",
+    "explanation": ".."
+  },
+
+
+  {
+    "id": 129,
+    "question": "#include <stdio.h>\r\n    int main()\r\n    {\r\n        int i = 10, j = 3;\r\n        printf(\"%d %d %d\", i, j);\r\n\treturn 0;\r\n    }",
+    "option1": "Compile time error",
+    "option2": "10 3",
+    "option3": "10 3 some garbage value",
+    "option4": "Undefined behaviour",
+    "answer": "10 3 some garbage value",
+    "explanation": ".."
+  },
+  {
+    "id": 130,
+    "question": "#include<iostream>\r\nusing namespace std;\r\n\r\nclass base\r\n{\tprivate:\r\n\tint a;\r\n\tpublic:\r\n\tbase(){\r\n\t\tcout<<\"base\\n\";\r\n\t\t\r\n\t}\r\n\tvoid create()\r\n\t{\r\n\t\tderived2 de;\r\n\t\tcout<<\"derived2 object created\\n\";\r\n\t}\r\n\t\r\n\t\r\n};\r\nclass derived:public base\r\n{\r\n\tint b;\r\n\tpublic:\r\n\t\tderived()\r\n\t\t{\r\n\t\t\tcout<<\"derived\\n\";\r\n\t\t\t\r\n\t\t}\r\n};\r\nclass derived2 : public derived\r\n{\r\n\tstring s;\r\n\tpublic:\r\n\t\tderived2()\r\n\t\t{\r\n\t\t\tcout<<\"derived2\\n\";\r\n\t\t}\r\n};\r\n\r\nint main()\r\n{\r\n\tderived2 d;\r\n\td.create();\r\n\treturn 0;\r\n}",
+    "option1": "base   derived   derived2   base   derived   derived2   derived2 object created",
+    "option2": "base   derived   derived2   derived2 object created",
+    "option3": "base   derived   derived2",
+    "option4": "compile time error",
+    "answer": "compile time error",
+    "explanation": ".."
+  },
+  {
+    "id": 135,
+    "question": "#include<stdio.h>\r\n#define decode(s,t,u,m,p,e,d) m##s##u##t\r\n#define begin decode(a,n,i,m,a,t,e)\r\n\r\nint begin()\r\n\r\n{\r\nprintf(” hello “);\r\nreturn 0;\r\n}",
+    "option1": "error: no main function",
+    "option2": "hello",
+    "option3": "runtime error",
+    "option4": "none of the above",
+    "answer": "hello",
+    "explanation": "."
+  },
+  {
+    "id": 136,
+    "question": "#include <stdio.h>\r\nint main(){\r\nextern int i=10; \r\n                \r\n    printf(\"value of i is\\n\");\r\n    printf(\"%d\",i);\r\n    return 0;\r\n\r\n}",
+    "option1": "10",
+    "option2": "Compilation error: Cannot initialize extern variable.",
+    "option3": "value of i is   10",
+    "option4": "abnormal termination of program",
+    "answer": "Compilation error: Cannot initialize extern variable.",
+    "explanation": "."
+  },
+  {
+    "id": 137,
+    "question": "#include <stdio.h>\r\nint main(){\r\nextern int i; \r\n              \r\n             \r\n    printf(\"%d\",i);\r\n    return 0;\r\n}\r\nstatic int i=20;",
+    "option1": "0",
+    "option2": "garbage value",
+    "option3": "error multiple declarations of i",
+    "option4": "20",
+    "answer": "20",
+    "explanation": "If we declare any variable as extern variable then it searches that variable either it has been initialized or not. If it has been initialized \r\nwhich may be either extern or static* then it is ok otherwise compiler will 0show an error.\r\n--"
+  },
+
+  {
+    "id": 140,
+    "question": "what does the following statement mean:\r\nint volatile * volatile p;",
+    "option1": "double volatile pointer to an integer variable",
+    "option2": "volatile pointer to a volatile variable",
+    "option3": "volatile pointer to integer variable",
+    "option4": "none of the above",
+    "answer": "volatile pointer to a volatile variable",
+    "explanation": "if you really must have a volatile pointer to a volatile variable, you'd write"
+  },
+  {
+    "id": 142,
+    "question": "#include<iostream>\r\n#include<iomanip>\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n\tint x=-23,y=-1195;\r\n\tcout.fill('*');\r\n\tcout.setf(ios::internal,ios::adjustfield);\r\n\tcout<<setw(7)<<x<<endl<<setw(7)<<y;\r\n\t\r\n}\r\nwhat will be the output of the program ?",
+    "option1": "-****23     -**1195",
+    "option2": "****-23     **-1195",
+    "option3": "**-**23     *-*1195",
+    "option4": "****23-    **1195-",
+    "answer": "-****23     -**1195",
+    "explanation": ".."
+  },
+  {
+    "id": 143,
+    "question": "what will 'b' give in the folowing code , where record is the name of the class ?\r\nfs.seekg=(0,ios::end);\r\na = fs.tellg;\r\nb= a/sizeof(record);",
+    "option1": "position of file pointer",
+    "option2": "end position in file storing record",
+    "option3": "size of the file contents",
+    "option4": "number of records",
+    "answer": "number of records",
+    "explanation": "number of records"
+  },
+  {
+    "id": 144,
+    "question": "#include<iostream>\r\n#include<string.h>\r\n#include<fstream>\r\nusing namespace std;\r\n\r\n\r\n\r\nint main()\r\n{\t\r\n\tchar str[80]={\"good morning\"};\r\n\t\tfstream f;\r\n\t\tf.open(\"E:\\\\data0\\\\sample.txt\",ios::in|ios::out);\r\n\t\tint x=2;\r\n\t\t\twhile(x>0)\r\n\t\t\t{\r\n\t\t\t\tx--;\r\n\t\t\t\tf<<str<<endl;\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\twhile(1)\r\n\t\t\t{\r\n\t\t\t\tf>>str;\r\n\t\t\t\r\n\t\t\t\tif(f.eof())\r\n\t\t\t\tbreak;\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\tcout<<str;\r\n\tf.close();\r\n\treturn 0;\r\n}\r\n   cosider file opens successfully without fail",
+    "option1": "no output",
+    "option2": "good morning   good morning",
+    "option3": "good morninggood morning",
+    "option4": "good morning",
+    "answer": "no output",
+    "explanation": "//"
+  }
+
+]
